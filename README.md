@@ -8,7 +8,7 @@ For use with AquaResp.
 
 Retrieves and saves OXYGEN (as % AIR SAT) data from Pyroscience Firesting fiber optic sensors.
 
-Creates one (1) data file per session.
+Creates one (1) data file per session. Logs sensors, up to 4, at approximately 1 sample per second.
 
 Updates a file with the latest measurement (For external access, e.g. Aquaresp or similar)
 
