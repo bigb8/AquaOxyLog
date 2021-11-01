@@ -12,6 +12,8 @@ import os
 saveloc_data = ""
 saveloc_latest = ""
 deviceport = "COM3"
+channelsactive = 2
+
 
 #Test COMPORTS
 # ser.write("#IDNR\r".encode())
@@ -20,7 +22,8 @@ deviceport = "COM3"
 # ser.write("#LOGO\r".encode())
 
 #LOG DATA
-channelsactive = 2
+
+delta_timeout = float("%.2f" % (1/float(channelsactive)))
 
 t0 = float(time.time())
 with open(str(int(t0))+".txt",'w') as flog:
@@ -28,7 +31,7 @@ with open(str(int(t0))+".txt",'w') as flog:
 
 #open serial port
 while 1:
-    with serial.Serial(deviceport, 115200, timeout=.25) as ser:
+    with serial.Serial(deviceport, 115200, timeout=delta_timeout) as ser:
         #loop active channels
         for c in range(1,channelsactive+1):
             #Get time stamp
