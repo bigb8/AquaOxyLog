@@ -1,0 +1,61 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+  </head>
+
+<body>
+  <h2> Create settings file for AquaOxyLog </h2>
+
+  <form>
+    <div>Active channels: <input id="nc" value =2 ></input></div>
+    <div>Location datafile:  <input id="l1" value ="C:\Users\%USERNAME%\Desktop\" ></div>
+    <div>Location aquaresp:  <input id="l2" value ="C:\Users\%USERNAME%\Desktop\" ></input></div>
+    <div>Device communication port: <input id="l3" value ="COM3" ></input></div>
+      <input type="button" id="bt" value="Save data to file" onclick="saveFile()" />
+  </form>
+
+
+
+  </body>
+<script>
+  let saveFile = () => {
+
+     // Get the data from each element on the form.
+     const nchan = document.getElementById("nc");
+     const loc1 = document.getElementById("l1");
+     const loc2 = document.getElementById("l2");
+     const comport = document.getElementById("l3");
+
+     // This variable stores all the data.
+     let data =
+         'channels: ' + nchan.value + ' \r\n' +
+         'loc1: ' +loc1.value + ' \r\n' +
+         'loc2: ' + loc2.value + ' \r\n' +
+         'comport: ' + comport.value + ' \r\n';
+
+     // Convert the text to BLOB.
+     const textToBLOB = new Blob([data], { type: 'text/plain' });
+     const sFileName = 'formData.txt';	   // The file to save the data.
+
+     let newLink = document.createElement("a");
+     newLink.download = sFileName;
+
+     if (window.webkitURL != null) {
+         newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+     }
+     else {
+         newLink.href = window.URL.createObjectURL(textToBLOB);
+         newLink.style.display = "none";
+         document.body.appendChild(newLink);
+     }
+
+     newLink.click();
+ }
+</script>
+
+
+</html>
