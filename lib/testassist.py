@@ -12,6 +12,8 @@ import assist as ass
 # ass.savesettings(settings)
 
 
-saveloc_data, saveloc_latest, deviceport, channelsactive = ass.getsettings2()
+# saveloc_data, saveloc_latest, deviceport, channelsactive = ass.getsettings2()
 
-print(saveloc_data, saveloc_latest, deviceport, channelsactive)
+# print(saveloc_data, saveloc_latest, deviceport, channelsactive)
+
+ass.updatedatahtml()
