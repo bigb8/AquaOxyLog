@@ -2,24 +2,14 @@ import serial
 import time
 import os
 
-#Set settings - interactivity with aquaresp
-### COM CHANNEL
 
-### ACTIVE CHANNEL - SETTINGS FROM INIT ?
-### AQUARESP LOCATION
+#Own libs
+import assist
+
 
 #Load settings
-saveloc_data = ""
-saveloc_latest = ""
-deviceport = "COM3"
-channelsactive = 2
 
-
-#Test COMPORTS
-# ser.write("#IDNR\r".encode())
-# ser.write("#BAUD\r".encode())
-# ser.write("#BAUD\r".encode())
-# ser.write("#LOGO\r".encode())
+saveloc_data, saveloc_latest, deviceport, channelsactive = assist.getsettings2()
 
 #LOG DATA
 
