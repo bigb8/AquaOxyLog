@@ -60,7 +60,7 @@ def updatedatahtml():
 
     #MAke html
     with open("liveplot"+os.sep+ "data.html",'w') as fhtml:
-        fhtml.write("<html> <meta http-equiv='refresh' content='2'><body>\n")
+        fhtml.write("<html> <meta http-equiv='refresh' content='5'><body>\n")
 
         #loop channels
         for c in range(1,channelsactive+1):
