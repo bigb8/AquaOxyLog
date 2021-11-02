@@ -2,7 +2,7 @@
 import os
 import json
 import getpass
-
+import datetime
 
 def savesettings(settings):
     #Write json settings file.  ALREADY DEPRECATED - CONSIDER DELETION
@@ -50,3 +50,28 @@ def getsettings2():
             deviceport = data[1].split("\n")[0].replace(" ","")
 
     return saveloc_data, saveloc_latest, deviceport, int(channelsactive)
+
+
+def updatedatahtml():
+
+
+    saveloc_data, saveloc_latest, deviceport, channelsactive = getsettings2()
+
+
+    #MAke html
+    with open("liveplot"+os.sep+ "data.html",'w') as fhtml:
+        fhtml.write("<html> <meta http-equiv='refresh' content='2'><body>\n")
+
+        #loop channels
+        for c in range(1,channelsactive+1):
+            fhtml.write("<h3>Channel " +str(c) + " </h3>")
+            #Get data
+            with open("liveplot"+os.sep+ str(c) +".aqua",'r') as flatest:
+                data = flatest.readlines()[0].split(";")
+                mystamp = float(data[0])
+                oxsat = float(data[1])
+
+            mystamp = datetime.datetime.utcfromtimestamp(mystamp).strftime('%Y-%m-%d %H:%M:%S')
+            fhtml.write("<div> <p>Oxygen: "+ str(oxsat)+" [%air sat]</p><p>at "+str(mystamp)+"</p>(yyyy-mm-dd hh:mm:ss) </div>\n")
+
+        fhtml.write("</body></html>\n")
