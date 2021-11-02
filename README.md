@@ -29,4 +29,6 @@ You can request features if you think that something would be nice to have.
 
  4. Run Logger.bat
 
- 5. Check file at LOC and see graphs at LOC2
+ 5. Check file at Location Datafile [and see graphs at ]
+
+ 6. End logging by closing the CMD window.
