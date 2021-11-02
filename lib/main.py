@@ -16,7 +16,7 @@ saveloc_data, saveloc_latest, deviceport, channelsactive = assist.getsettings2()
 delta_timeout = float("%.2f" % (1/float(channelsactive)))
 
 t0 = float(time.time())
-with open(str(int(t0))+".txt",'w') as flog:
+with open(saveloc_data + os.sep +str(int(t0))+".txt",'w') as flog:
     flog.write("%s;%s;%s;%s;\n" % ("CHANNEL", "OXYGEN AIR SAT", "TIME ABS","TIME REL"))
 
 #open serial port
@@ -45,7 +45,7 @@ while 1:
             print("Channel: ", c,oxsat,mystamp)
 
             #Save to log file
-            with open(str(int(t0))+".txt",'a') as flog:
+            with open(saveloc_data + os.sep + str(int(t0))+".txt",'a') as flog:
                 flog.write("%s;%s;%s;%s;\n" % (c, oxsat, mystamp,mystamp-t0))
 
             #Save to active datafile
