@@ -27,8 +27,8 @@ You can request features if you think that something would be nice to have.
 
  3.  Create a settings file: Find the index.html file in /settinggui file out and press download. Place the "downloaded" file in the /lib folder, replace the existing one.
 
- 4. Run Logger.bat
+ <del>4. Run Logger.bat<del>
 
- 5. Check file at Location Datafile [and see graphs at ]
+ 5. Check file at Location Datafile. See live data using the data.html in /lib/liveplot/
 
  6. End logging by closing the CMD window.
