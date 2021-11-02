@@ -1,4 +1,4 @@
 channels;2
-loc1;C:\Users\%USERNAME%\Desktop\
-loc2;C:\Users\%USERNAME%\Desktop\
-comport;COM3 
+loc1;C:\Users\[USERNAME]\Desktop\
+loc2;C:\Users\[USERNAME]\Desktop\
+comport;COM3
