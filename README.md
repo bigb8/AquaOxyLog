@@ -16,11 +16,17 @@ You can request features if you think that something would be nice to have.
 
 ## Getting started
 
+### Preparation of the oxygen sensor
+
  1. Calibrate and setup the oxygen logger via the PyroWorkbench provided by the manufacturer.
  See (LINKLINK)[TOHERE]
 
- 2. Close PyroScience Software. This is necessary as only 1 simultaneous software connection to the hardware is possible.
+ 2. Close PyroScience Software. This is necessary as only 1 software connection to the hardware is possible.
 
- 3. Run Logger.bat
+### Start AquaOxyLog
 
- 4. Check file at LOC and see graphs at LOC2
+ 3.  Create a settings file: Find the index.html file in /settinggui file out and press download. Place the "downloaded" file in the /lib folder, replace the existing one.
+
+ 4. Run Logger.bat
+
+ 5. Check file at LOC and see graphs at LOC2
