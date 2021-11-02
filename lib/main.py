@@ -50,4 +50,8 @@ while 1:
 
             #Save to active datafile
             with open(saveloc_latest + str(c) +".aqua",'w') as flatest:
-                flatest.write("%s" % oxsat)
+                flatest.write("%s;%s;" % (mystamp,oxsat))
+
+            #Save to active datafile for plotting
+            with open("liveplot"+os.sep+ str(c) +".aqua",'w') as flatest:
+                flatest.write("%s;%s;" % (mystamp,oxsat))
