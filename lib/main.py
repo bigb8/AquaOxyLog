@@ -56,5 +56,5 @@ while 1:
             with open("liveplot"+os.sep+ str(c) +".aqua",'w') as flatest:
                 flatest.write("%s;%s;" % (mystamp,oxsat))
 
-            #Update data html
-            assist.updatedatahtml()
+        #Update data html
+        assist.updatedatahtml()
