@@ -21,7 +21,7 @@ def getsettings():
     deviceport = data["deviceport"]
     channelsactive = data["channelsactive"]
 
-    return saveloc_data, saveloc_latest, deviceport, channelsactive
+    return saveloc_data, saveloc_latest, deviceport, int(channelsactive)
 
 
 def getsettings2():
@@ -41,4 +41,4 @@ def getsettings2():
         if data[0] == "comport":
             deviceport = data[1].split("\n")[0]
 
-    return saveloc_data, saveloc_latest, deviceport, channelsactive
+    return saveloc_data, saveloc_latest, deviceport, int(channelsactive)
