@@ -17,7 +17,7 @@ You can request features if you think that something would be nice to have.
 ## Getting started
 
 ## Prerequisites
-1. Python installed
+1. Python installed (if for use with Aquaresp, see [Aquaresp repository](https://github.com/bigb8/AquaResp)
 2. **pyserial** installed. > Open CMD (Windows button, then type "cmd") > write "py -m pip install pyserial", press ENTER
 
 ### Preparation of the oxygen sensor
