@@ -16,8 +16,8 @@ def getsettings():
     with open("settings.aquaset","r") as json_file:
         data = json.load(json_file)
 
-    saveloc_data = data["saveloc_data"]
-    saveloc_latest = data["saveloc_latest"]
+    saveloc_data = data["saveloc_data"].replace("\\",os.sep)
+    saveloc_latest = data["saveloc_latest"].replace("\\",os.sep)
     deviceport = data["deviceport"]
     channelsactive = data["channelsactive"]
 
@@ -45,11 +45,11 @@ def getsettings2():
         if data[0] == "loc2":
             saveloc_latest = data[1].split("\n")[0]
             saveloc_latest = saveloc_latest.replace("[USERNAME]",un)
-            print(saveloc_latest)
+
         if data[0] == "comport":
             deviceport = data[1].split("\n")[0].replace(" ","")
 
-    return saveloc_data, saveloc_latest, deviceport, int(channelsactive)
+    return saveloc_data + os.sep, saveloc_latest + os.sep, deviceport, int(channelsactive)
 
 
 def updatedatahtml():
