@@ -16,6 +16,10 @@ You can request features if you think that something would be nice to have.
 
 ## Getting started
 
+## Prerequisites
+1. Python installed
+2. **pyserial** installed. > Open CMD (Windows button, then type "cmd") > write "py -m pip install pyserial", press ENTER
+
 ### Preparation of the oxygen sensor
 
 **The logger requires that the oxygen meter is set up and calibrated before use.**
